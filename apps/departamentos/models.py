@@ -1,4 +1,6 @@
 from django.db import models
+from django.urls import reverse
+
 from apps.empresas.models import Empresa
 
 class Departamento(models.Model):
@@ -7,3 +9,6 @@ class Departamento(models.Model):
 
     def __str__(self):
         return self.nome
+
+    def get_absolute_url(self):
+        return reverse('listar_departamentos')
