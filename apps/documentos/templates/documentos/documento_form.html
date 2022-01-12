@@ -4,7 +4,7 @@
 
 {% block main %}
     {{ form.errors }}
-    <form method="post">
+    <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form|bootstrap }}
         <button type="submit" class="btn btn-info">Salvar</button>

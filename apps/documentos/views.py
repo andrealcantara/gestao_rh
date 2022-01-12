@@ -23,7 +23,6 @@ class DocumentosCreate(CreateView):
 
     def post(self, request, *args, **kwargs):
         form = self.get_form()
-        self.object = form
         id_funcionario = self.kwargs['id_funcionario']
         form.instance.pertence_id = id_funcionario
         if form.is_valid():
