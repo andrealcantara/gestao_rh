@@ -1,3 +1,4 @@
+from django.http import HttpResponse
 from django.shortcuts import render
 
 # Create your views here.
@@ -22,9 +23,9 @@ class DocumentosCreate(CreateView):
 
     def post(self, request, *args, **kwargs):
         form = self.get_form()
+        self.object = form
         id_funcionario = self.kwargs['id_funcionario']
-        form.instance.pertence = Funcionario.objects.filter(id_funcionario)
-        form.instance.pertence_id = form.instance.pertence.id
+        form.instance.pertence_id = id_funcionario
         if form.is_valid():
             return self.form_valid(form)
         else:

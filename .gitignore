@@ -130,3 +130,6 @@ dmypy.json
 
 # Ide
 .idea/
+
+# media file git
+media/
