@@ -1,12 +1,10 @@
 {% extends 'base.html' %}
+{% load bootstrap %}
 
-{% load bootstrap %}
-{% load bootstrap %}
 {% block main %}
     <form method="post">
         {% csrf_token %}
         {{ form|bootstrap }}
         <button type="submit" class="btn btn-info">Salvar</button>
     </form>
-    <a href="{% url 'criar_documentos' object.id %}" class="btn btn-success mt-1" >Adicionar Documentos</a>
 {% endblock %}
