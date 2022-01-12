@@ -7,6 +7,11 @@
             <h3> Olá {{ usuario.funcionario.nome }}</h3>
             <a href="{% url 'logout' %}" class="btn btn-info"> Sair </a>
         </div>
+    {% if user.funcionario.empresa %}
+        <div class="col-sm">
+            <a href="{% url 'listar_funcionarios' %}" class="link-info">Gerenciar Funcionarios</a>
+        </div>
+    {% endif %}
         <div class="col-sm">
             {% if user.funcionario.empresa %}
                 <a href="{% url 'editar_empresa' user.funcionario.empresa.id %}" class="btn btn-sm btn-warning">Editar empresa</a>

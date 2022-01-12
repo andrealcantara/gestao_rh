@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block main %}
+
+    {% for funcionario in object_list %}
+    <div class="row">
+        <div class="col-sm-auto"><a href="{% url 'editar_funcionarios' funcionario.id %}">Editar </a></div>
+        <div class="col-sm-auto"><a href="{% url 'deletar_funcionarios' funcionario.id %}">Deletar </a></div>
+        <div class="col-lg">{{ funcionario }}</div>
+
+
+    </div>
+    {% endfor %}
+    <a href="{% url 'criar_funcionarios' %}" class="btn btn-info"> Criar Funcionario</a>
+{% endblock %}
