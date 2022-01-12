@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block main %}
+    <form method="post" class="form-control">
+        {% csrf_token %}
+        <h1> Voce esta certo que quer <b>deletar</b> {{ object }}</h1>
+        {{ form }}
+        <button type="submit" class="btn btn-danger" href="">Confirmar</button>
+        <a href="{% url 'listar_departamentos' %}" class="btn btn-info">Cancelar</a>
+    </form>
+
+{% endblock %}

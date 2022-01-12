@@ -8,8 +8,9 @@
             <a href="{% url 'logout' %}" class="btn btn-info"> Sair </a>
         </div>
     {% if user.funcionario.empresa %}
-        <div class="col-sm">
-            <a href="{% url 'listar_funcionarios' %}" class="link-info">Gerenciar Funcionarios</a>
+        <div class="col-sm p-sm-1">
+            <a href="{% url 'listar_funcionarios' %}" class="btn btn-outline-info">Gerenciar Funcionarios</a>
+            <a href="{% url 'listar_departamentos' %}" class="btn btn-outline-info">Gerenciar Departamentos</a>
         </div>
     {% endif %}
         <div class="col-sm">
