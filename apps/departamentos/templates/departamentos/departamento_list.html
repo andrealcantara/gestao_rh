@@ -4,8 +4,8 @@
 
     {% for departamento in object_list %}
     <div class="row">
-{#        <div class="col-sm-auto"><a href="{% url 'editar_funcionarios' funcionario.id %}">Editar </a></div>#}
-{#        <div class="col-sm-auto"><a href="{% url 'deletar_funcionarios' funcionario.id %}">Deletar </a></div>#}
+        <div class="col-sm-auto"><a href="{% url 'editar_departamentos' departamento.id %}">Editar</a></div>
+        <div class="col-sm-auto"><a href="{% url 'deletar_departamentos' departamento.id %}">Deletar</a></div>
         <div class="col-lg">{{ departamento }}</div>
 
 
