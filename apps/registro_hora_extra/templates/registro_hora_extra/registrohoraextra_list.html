@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block main %}
+    <div class="row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-1"></div>
+        <div class="col-sm-1">Qntd</div>
+        <div class="col-lg">Motivo</div>
+        <div class="col-sm-auto">Funcionario</div>
+    </div>
+    {% for horaExtra in object_list %}
+    <div class="row">
+        <div class="col-sm-1"><a href="{% url 'editar_hora_extra' horaExtra.id %}">Editar </a></div>
+        <div class="col-sm-1"><a href="{% url 'deletar_hora_extra' horaExtra.id %}">Deletar </a></div>
+        <div class="col-sm-1">{{ horaExtra.hora_extra }}</div>
+        <div class="col-lg">{{ horaExtra }}</div>
+        <div class="col-sm-auto">{{ horaExtra.funcionario }}</div>
+    </div>
+    {% empty %}
+    <div class="row">
+        <div class="col-sm-auto">Registro de hora extra não cadastrado</div>
+    </div>
+    {% endfor %}
+    <a href="{% url 'criar_hora_extra' %}" class="btn btn-info">Adicionar Hora Extra</a>
+{% endblock %}
