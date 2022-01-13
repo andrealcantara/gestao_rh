@@ -15,7 +15,12 @@ class HoraExtraList(ListView):
 
 class HoraExtraUpdate(UpdateView):
     model = RegistroHoraExtra
-    fields = ['motivo', 'funcionario', 'hora_extra']
+    form_class = RegistroHoraExtraForm
+
+    def get_form_kwargs(self):
+        kwargs = super(HoraExtraCreate, self).get_form_kwargs()
+        kwargs.update({'user': self.request.user})
+        return kwargs
 
 
 class HoraExtraDelete(DeleteView):
