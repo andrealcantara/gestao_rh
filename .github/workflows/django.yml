@@ -21,9 +21,7 @@ jobs:
         python-version: ${{ matrix.python-version }}
     - name: Install Dependencies
       run: |
-        python3.8 -m venv venv
-        . venv/bin/activate
-        pip install --upgrade pip
+        python -m pip install --upgrade pip
         pip install wheel
         pip install uwsgi
         pip install -r requirements.txt
