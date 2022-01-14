@@ -10,7 +10,7 @@ DEBUG = \
      False
      # True
 
-ALLOWED_HOSTS = ['*', '45.62.232.78']
+ALLOWED_HOSTS = ['45.62.232.78']
 
 
 # Application definition
