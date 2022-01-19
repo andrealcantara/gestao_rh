@@ -135,4 +135,4 @@ dmypy.json
 media/
 
 # Removendo o Settings
-gestao_rh/settings.py
+settings.py
