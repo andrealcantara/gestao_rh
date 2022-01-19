@@ -133,3 +133,6 @@ dmypy.json
 
 # media file git
 media/
+
+# Removendo o Settings
+gestao_rh/settings.py
