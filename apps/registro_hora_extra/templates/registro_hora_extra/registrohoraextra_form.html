@@ -7,7 +7,8 @@
         <button type="submit" class="btn btn-info">Salvar</button>
         {% if object %}
             <a href="{% url 'deletar_hora_extra' object.id %}" class="btn btn-danger">Deletar</a>
-            <a onclick="mark_used({{ object.id }},'{{ csrf_token }}')" class="btn btn-info">Marcar como usado</a>
+            <button type="button" id="used_toggle" my-value="{{ object.utilizada|lower }}"
+                    onclick="update_used_toggle({{ object.id }},'{{ csrf_token }}')" class="btn btn-info" ></button>
         {% endif %}
     </form>
 {% endblock %}
