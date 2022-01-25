@@ -9,10 +9,6 @@ class RegistroHoraExtra(models.Model):
     funcionario = models.ForeignKey(Funcionario, on_delete=models.deletion.PROTECT)
     hora_extra = models.DecimalField(max_digits=5, decimal_places=2)
 
-
-    def get_absolute_url(self):
-        return reverse('listar_hora_extra')
-
     def __str__(self):
         return self.motivo
 
