@@ -1,10 +1,13 @@
 import itertools
 
 from django.contrib.auth.models import User
+from django.shortcuts import render
 from django.urls import reverse_lazy
+from django.views import View
 from django.views.generic import ListView
 from django.views.generic.edit import UpdateView, DeleteView, CreateView
 from .models import Funcionario
+from .render import Render
 
 
 class FuncionariosList(ListView):
@@ -38,3 +41,16 @@ class FuncionariosCreate(CreateView):
         funcionario.save()
         return super(FuncionariosCreate, self).form_valid(form)
 
+class FuncionariosRelatorioPdf(View):
+
+    def get(self, *args, **kwargs):
+        funcionarios = Funcionario.objects.filter(empresa=self.request.user.funcionario.empresa)
+        params = {'funcionarios': funcionarios}
+        return Render.render('funcionarios/relatorio-pdf.html', params, 'RelatorioFuncionario')
+
+class FuncionariosRelatorioMock(View):
+
+    def get(self, *args, **kwargs):
+        funcionarios = Funcionario.objects.filter(empresa=self.request.user.funcionario.empresa)
+        params = {'funcionarios':funcionarios}
+        return render(self.request, 'funcionarios/relatorio-pdf.html', params)

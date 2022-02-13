@@ -12,4 +12,7 @@
     </div>
     {% endfor %}
     <a href="{% url 'criar_funcionarios' %}" class="btn btn-info"> Criar Funcionario</a>
+    {% if object_list %}
+        <a href="{% url 'gerar_pdf_funcionarios' %}" class="btn btn-light">Gerar Relatorios</a>
+    {% endif %}
 {% endblock %}

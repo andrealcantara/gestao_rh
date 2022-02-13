@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap %}
+
+
+{% block main %}
+    <h2> Relatorio funcionario</h2>
+    <table class="table table-responsive table-striped">
+        <thead class="table-dark">
+        <tr>
+            <th scope="col">Nome Funcionario</th>
+            <th scope="col">Total Hora Extra</th>
+        </tr>
+        </thead>
+        <tbody class="tab-content">
+        {% for func in funcionarios %}
+            <tr scope="col"><td>{{ func }}</td><td>{{ func.total_horas_extras }}</td></tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <button type="button" class="btn btn-info"> teste de css </button>
+{% endblock %}
